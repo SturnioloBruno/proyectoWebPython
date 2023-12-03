@@ -4,19 +4,32 @@
 
 {% block content %}
 
-    <div class="row">
+    <div class="container">
 
-        {% for producto in productos %}
+        <div class="row">
 
-            <div class="card" style="width: 10%;">
+            {% for producto in productos %}
 
-                <img src="{{producto.imagen.url}}" alt="prodimg">
+                <div class="col-md-3">
 
+                    <div class="card" style="width: 100%; margin: 5px 5px;">
 
-            </div>
+                        <img src="{{producto.imagen.url}}" alt="prodimg" class="card-img-top">
 
-        {% endfor %}
-        
+                        <div class="card-body" style="text-align: center;">
+
+                            <h6 class="card-title">{{producto.nombre}}</h6>
+
+                            <p class="card-text">{{producto.precio}} &nbsp; €</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
     </div>
 
 {% endblock %}
