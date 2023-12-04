@@ -30,4 +30,6 @@ urlpatterns = [
     path('contacto/', include('contacto.urls')),
 
     path('tienda/', include('tienda.urls')),
+
+    
 ]
