@@ -5,7 +5,7 @@ from django.db.models import F, Sum, FloatField
 
 # Create your models here.
 
-User = get_user_model
+User = get_user_model()
 
 class Pedido(models.Model):
 
@@ -20,8 +20,6 @@ class Pedido(models.Model):
         return self.lineapedido_set.aggregate(
 
             total = Sum(F("precio")*F("cantidad"), output_field=FloatField())
-
-
 
         )["total"]
 
